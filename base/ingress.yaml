@@ -7,6 +7,28 @@ spec:
     - websecure
   routes:
     - kind: Rule
+      match: Host(`hofu.uniproject.jp`) && PathPrefix(`/2025`)
+      observability:
+        accessLogs: true
+        metrics: true
+        tracing: true
+      priority: 10
+      services:
+        - kind: Service
+          name: hofu-2025
+          passHostHeader: true
+          port: 80
+          responseForwarding:
+            flushInterval: 1ms
+          scheme: http
+          sticky:
+            cookie:
+              httpOnly: true
+              name: cookie
+              secure: true
+          strategy: wrr
+          weight: 10
+    - kind: Rule
       match: Host(`hofu.uniproject.jp`)
       observability:
         accessLogs: true
@@ -15,7 +37,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: api
+          name: hofu-2026
           passHostHeader: true
           port: 80
           responseForwarding:

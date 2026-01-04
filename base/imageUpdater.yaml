@@ -1,0 +1,14 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: hofu-site
+  namespace: argocd
+spec:
+  namespace: argocd
+  applicationRefs:
+    - namePattern: "hofu-site"
+      images:
+        - alias: "hofu-site-front"
+          imageName: "registry.uniproject.jp/officials/hofu-2026:x.x.x-x"
+          commonUpdateSettings:
+            updateStrategy: "semver"

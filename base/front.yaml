@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hofu-2026
+  labels:
+    app: hofu-2026
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hofu-2026
+  template:
+    metadata:
+      labels:
+        app: hofu-2026
+    spec:
+      containers:
+        - name: hofu-2026
+          image: registry.uniproject.jp/official/hofu-2026:1.0.0-0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: NODE_OPTIONS
+              value: "--max-old-space-size=4096"
+          resources:
+            requests:
+              memory: "6Gi"
+            limits:
+              memory: "10Gi"
+          envFrom:
+            - secretRef:
+                name: hofu-2026-front-secrets
+      imagePullSecrets:
+        - name: internal-harbor
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front
+  labels:
+    app: hofu-2026
+spec:
+  selector:
+    app: hofu-2026
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP

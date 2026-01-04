@@ -1,21 +1,21 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: hofu-ingress
+  name: hofu-2025-ingress
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`hofu.uniproject.jp`)
+      match: Host(`hofu.uniproject.jp`) && PathPrefix(`/2025`)
       observability:
         accessLogs: true
         metrics: true
         tracing: true
-      priority: 10
+      priority: 20
       services:
         - kind: Service
-          name: hofu-2026
+          name: hofu-2025
           passHostHeader: true
           port: 80
           responseForwarding:

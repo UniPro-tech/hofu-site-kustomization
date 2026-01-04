@@ -38,7 +38,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: front
+  name: hofu-2026
   labels:
     app: hofu-2026
 spec:

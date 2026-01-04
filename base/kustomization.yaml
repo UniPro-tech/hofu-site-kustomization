@@ -10,4 +10,3 @@ resources:
   - ./secrets.yaml
   - ./2025-deploy.yaml
   - ./2025-service.yaml
-  - ./ingress-2025.yaml

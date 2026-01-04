@@ -9,6 +9,10 @@ spec:
     - namePattern: "hofu-site"
       images:
         - alias: "hofu-site-front"
-          imageName: "registry.uniproject.jp/officials/hofu-2026:x.x.x-x"
+          imageName: "registry.uniproject.jp/official/hofu-2026:x.x.x-x"
+          commonUpdateSettings:
+            updateStrategy: "semver"
+        - alias: "hofu-site-2025"
+          imageName: "registry.uniproject.jp/official/hofu-2025:x.x.x-x"
           commonUpdateSettings:
             updateStrategy: "semver"

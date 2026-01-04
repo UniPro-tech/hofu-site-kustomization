@@ -7,4 +7,4 @@ resources:
   - ./imageUpdater.yaml
   - ./ingress.yaml
   - ./harbor.yaml
-  - ./secret.yaml
+  - ./secrets.yaml

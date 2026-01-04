@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: hofu-2025
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:

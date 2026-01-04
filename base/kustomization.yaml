@@ -6,3 +6,5 @@ resources:
   - ./front.yaml
   - ./imageUpdater.yaml
   - ./ingress.yaml
+  - ./harbor.yaml
+  - ./secret.yaml

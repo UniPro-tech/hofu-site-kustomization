@@ -8,3 +8,5 @@ resources:
   - ./ingress.yaml
   - ./harbor.yaml
   - ./secrets.yaml
+  - ./2025-deploy.yaml
+  - ./2025-service.yaml

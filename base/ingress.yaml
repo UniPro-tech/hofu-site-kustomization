@@ -12,7 +12,7 @@ spec:
         accessLogs: true
         metrics: true
         tracing: true
-      priority: 10
+      priority: 20
       services:
         - kind: Service
           name: hofu-2025
@@ -29,7 +29,7 @@ spec:
           strategy: wrr
           weight: 10
     - kind: Rule
-      match: Host(`hofu.uniproject.jp`)
+      match: Host(`hofu.uniproject.jp`) && PathPrefix(`/`)
       observability:
         accessLogs: true
         metrics: true

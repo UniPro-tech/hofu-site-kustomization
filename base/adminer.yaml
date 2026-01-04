@@ -45,7 +45,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`adminer.hofu.uniproject.jp`)
+      match: Host(`adminer.uniproject.jp`)
       observability:
         accessLogs: true
         metrics: true

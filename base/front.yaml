@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hofu-2026
-          image: registry.uniproject.jp/official/hofu-2026:1.0.0-0
+          image: registry.uniproject.jp/official/hofu-2026:1.0.0-1
           ports:
             - containerPort: 3000
           env:

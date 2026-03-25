@@ -22,13 +22,11 @@ spec:
           env:
             - name: NODE_ENV
               value: "production"
-            - name: NODE_OPTIONS
-              value: "--max-old-space-size=4096"
           resources:
             requests:
-              memory: "6Gi"
+              memory: "512Mi"
             limits:
-              memory: "10Gi"
+              memory: "2Gi"
           envFrom:
             - secretRef:
                 name: hofu-2026-front-secrets

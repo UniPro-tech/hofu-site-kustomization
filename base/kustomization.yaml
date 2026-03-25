@@ -11,3 +11,4 @@ resources:
   - ./2025-deploy.yaml
   - ./2025-service.yaml
   - ./adminer.yaml
+  - ./hpa.yaml

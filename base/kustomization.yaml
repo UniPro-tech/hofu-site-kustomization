@@ -5,7 +5,7 @@ resources:
   - ./pvc.yaml
   - ./front.yaml
   - ./imageUpdater.yaml
-  - ./ingress.yaml
+  - ./httproute.yaml
   - ./harbor.yaml
   - ./secrets.yaml
   - ./2025-deploy.yaml
